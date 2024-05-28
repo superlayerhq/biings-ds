@@ -1,13 +1,21 @@
 body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, input, textarea, button, .button, .title
-    letter-spacing: 0
+    letter-spacing: 0 !important
 
 input, textarea, button, .button
     border-radius: 4px !important
 
-.title.is-2
-    font-size: 1.75rem !important
-    font-weight: 600 !important
-    text-transform: uppercase !important
-
 .is-size-7
     font-size: 0.65rem !important
+
+input::placeholder
+    color: $grey !important
+
+.checkbox
+  & input[type="checkbox"]:not(:checked) + .checkbox-mark
+    background-color: $secondary !important
+
+  & input[type="checkbox"]:checked + .checkbox-mark
+    background-color: $success !important
+
+  & input[type="checkbox"]:disabled + .checkbox-mark
+    background-color: $grey-light !important
