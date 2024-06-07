@@ -1,21 +1,36 @@
-body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, input, textarea, button, .button, .title
-    letter-spacing: 0 !important
+* 
+  letter-spacing: 0
 
 input, textarea, button, .button
-    border-radius: 4px !important
+  border-radius: 4px !important
 
 .is-size-7
-    font-size: 0.65rem !important
+  font-size: 0.65rem !important
 
 input::placeholder
-    color: $grey !important
+  color: $grey !important
+
+button
+  color: $white !important
+
+button:disabled
+  background-color: $grey-light !important
+  border-color: $grey-light !important
+  color: $grey !important
+
+  svg
+    fill: $grey !important
 
 .checkbox
-  & input[type="checkbox"]:not(:checked) + .checkbox-mark
-    background-color: $secondary !important
+  &.is-toggle
+    & input[type="checkbox"]:not(:checked) + .checkbox-mark
+      background-color: $secondary !important
 
-  & input[type="checkbox"]:checked + .checkbox-mark
-    background-color: $success !important
+    & input[type="checkbox"]:checked + .checkbox-mark
+      background-color: $success !important
 
-  & input[type="checkbox"]:disabled + .checkbox-mark
-    background-color: $grey-light !important
+    & input[type="checkbox"]:disabled + .checkbox-mark
+      background-color: $grey-light !important
+
+    & > input[type="checkbox"]:disabled:checked ~ .checkbox-mark:before
+      border-color: $grey-lightest !important
